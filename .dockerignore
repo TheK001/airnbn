@@ -1,0 +1,40 @@
+# Python-related ignored files
+__pycache__/
+*.pyc
+*.pyo
+.Python
+env/
+venv/
+.pytest_cache/
+
+# Django-specific ignored files
+db.sqlite3
+media/
+static_collected/
+staticfiles/
+*.log
+
+# Version control ignored files
+.git/
+.gitignore
+
+# Editor/IDE specific ignored files
+.vscode/
+.idea/
+*.swp
+*~
+.#*
+
+# Docker-specific ignored files
+# (Do NOT ignore Dockerfile or docker-compose.yml)
+.dockerignore
+
+# Environment / secrets
+.env
+.env.* 
+
+# Other common ignored files
+tmp/
+node_modules/
+dist/
+build/
