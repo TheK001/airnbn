@@ -1,0 +1,13 @@
+Day 1: Homepage + Basic templates
+
+Day 2: User authentication (login/register)
+
+Day 3: Property model + admin interface
+
+Day 4: Property listing pages
+
+Day 5: Property detail pages
+
+Day 6: Booking system
+
+Day 7: Reviews and ratings

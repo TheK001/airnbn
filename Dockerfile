@@ -20,5 +20,5 @@ RUN dos2unix /airnbn/entrypoint.sh || true
 RUN chmod +x /airnbn/entrypoint.sh
 
 ENTRYPOINT ["/airnbn/entrypoint.sh"]
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-# CMD ["gunicorn","airnbn.wsgi:application","--bind","0.0.0.0:8000","--workers","3"]
+ CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"] """For development"""
+# CMD ["gunicorn","airnbn.wsgi:application","--bind","0.0.0.0:8000","--workers","3"] # For production
