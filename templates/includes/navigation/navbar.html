@@ -1,8 +1,9 @@
- {% load static %}
+{% load static %}
+
  <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="/static/images/A_logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      <img src="{% static 'A_logo.png' %} "alt="logo" width="30" height="24" class="d-inline-block align-text-top">
       Bootstrap
     </a>
   </div>

@@ -13,6 +13,7 @@ import environ
 import os
 from pathlib import Path
 
+
 env = environ.Env(
     DEBUG=(bool, False)
 )
@@ -27,6 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
+if not SECRET_KEY:
+    SECRET_KEY = 'django-insecure-^2axs-wa*lz^rp1v$8gr2q4#a0ug&rdzus!g!qy9&27(47roch'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
@@ -129,8 +132,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']  # Development files
-STATIC_ROOT = BASE_DIR / 'static_collected'  # Production collection
+
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+STATIC_ROOT = BASE_DIR / 'static_collected'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # For production
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # For development
+]
+# Media files (Uploaded by users)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

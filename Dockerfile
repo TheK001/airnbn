@@ -16,8 +16,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Ensure entrypoint.sh has correct permissions
+
+COPY entrypoint.sh /airnbn/entrypoint.sh
 RUN dos2unix /airnbn/entrypoint.sh || true
-RUN chmod +x /airnbn/entrypoint.sh
+RUN chmod +x ./entrypoint.sh
 
 ENTRYPOINT ["/airnbn/entrypoint.sh"]
  CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"] """For development"""

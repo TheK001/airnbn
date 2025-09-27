@@ -6,8 +6,9 @@ services:
     env_file:
       - .env
     volumes:
-      - .:/app
-      - static_volume:/app/static_collected
+      - .:/airnbn
+      - static_volume:/airnbn/static_collected
+    working_dir: /airnbn
     expose:
       - "8000"
     depends_on:
